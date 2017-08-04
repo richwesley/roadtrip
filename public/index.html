@@ -3,9 +3,23 @@
 <head>
 <meta charset="utf-8">
 <title>Road Trip</title>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
-<img src="assets/images/20161129_185622000_iOS.jpg" alt="" width="960"/>
+
+<img src="assets/images/roadtrip.jpg" class="img-responsive" alt="home page" usemap="#Map"/>
+<map name="Map">
+  <area shape="circle" coords="1054,71,48" href="login.html" alt="login">
+  <area shape="rect" coords="616,475,851,619" href="itenerary.html">
+</map>
 </body>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src="assets/js/image-map.js"></script>
+<script>
+  $('img[usemap]').imageMap();
+</script>
 </html>
