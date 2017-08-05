@@ -20,55 +20,55 @@ module.exports = function(app) {
       query.UserId = req.query.user_id;
     }
     
-    db.Itenerary.findAll({
+    db.Itinerary.findAll({
       where: query,
       include: [db.User]
-    }).then(function(dbItenerary) {
-      res.json(dbItenerary);
+    }).then(function(dbItinerary) {
+      res.json(dbItinerary);
     });
   });
 
-  // Get rotue for retrieving a single itenerary
+  // Get rotue for retrieving a single Itinerary
   app.get("/api/iteneraries/:id", function(req, res) {
     
-    db.Itenarary.findOne({
+    db.Itinerary.findOne({
       where: {
         id: req.params.id
       },
       include: [db.User]
-    }).then(function(dbItenerary) {
-      res.json(dbItenerary);
+    }).then(function(dbItinerary) {
+      res.json(dbItinerary);
     });
   });
 
-  // POST route for saving a new itenerary
+  // POST route for saving a new Itinerary
   app.post("/api/iteneraries", function(req, res) {
     db.Post.create(req.body).then(function(dbPost) {
       res.json(dbPost);
     });
   });
 
-  // DELETE route for deleting itenerary
+  // DELETE route for deleting Itinerary
   app.delete("/api/iteneraries/:id", function(req, res) {
-    db.Itenerary.destroy({
+    db.Itinerary.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbItenerary) {
-      res.json(dbItenerary);
+    }).then(function(dbItinerary) {
+      res.json(dbItinerary);
     });
   });
 
-  // PUT route for updating itenerary
+  // PUT route for updating Itinerary
   app.put("/api/iteneraries", function(req, res) {
-    db.Itenerary.update(
+    db.Itinerary.update(
       req.body,
       {
         where: {
           id: req.body.id
         }
-      }).then(function(dbItenerary) {
-        res.json(dbItenerary);
+      }).then(function(dbItinerary) {
+        res.json(dbItinerary);
       });
   });
 };
