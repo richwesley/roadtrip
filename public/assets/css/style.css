@@ -1,3 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
 
+
+
+#tire {
+	position: relative;
+	left: 53%;
+	top: 43%;
+	height: auto;
+	max-width: 8%;
+	margin-top: -120%;
+	margin-left: 20%;
+}
+
+#tire:hover{
+	max-width: 10%
+}
