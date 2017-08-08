@@ -47,18 +47,36 @@
 				</ul>
 			  </div>
 			</div>
-		  </div>	
-        </div>		
+		  </div>
+       			
+        </div>	
+        <form name="form_name1" id="form_name1" style="display:none">
+<!---- THIS IS FORM 1---->
+		</form>
+
+		<form name="form_name2" id="form_name2" style="display:none">
+<!---- THIS IS FORM 2---->
+		</form>
+
+		<form name="form_name3" id="form_name3" style="display:none">
+<!---- THIS IS FORM 3---->
+		</form>
 	</div>
+
 </body>
 
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="assets/jQueryAssets/jquery-1.11.1.min.js"></script>
 <script src="assets/jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+
 <script>
 $(function() {
 	$( "#Datepicker1" ).datepicker(); 
 });
+	
+$("#myselect").on("change", function() {
+    $("#" + $(this).val()).show().siblings().hide();	
+	</div>
 </script>
 </html>
