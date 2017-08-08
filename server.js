@@ -20,7 +20,7 @@ const db = require("./models");
 // =============================================================
 require("./routes/user-api-routes")(app);
 require("./routes/html-routes")(app);
-require("./routes/itenerary-api-routes")(app);
+require("./routes/itinerary-api-routes")(app);
 
 // Syncing sequelize models and then starting our Express app
 // =============================================================
