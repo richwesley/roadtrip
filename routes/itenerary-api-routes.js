@@ -14,7 +14,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the iteneraries
-  app.get("/api/iteneraries", function(req, res) {
+  app.get("/api/itineraries", function(req, res) {
     var query = {};
     if (req.query.user_id) {
       query.UserId = req.query.user_id;
@@ -29,7 +29,7 @@ module.exports = function(app) {
   });
 
   // Get rotue for retrieving a single Itinerary
-  app.get("/api/iteneraries/:id", function(req, res) {
+  app.get("/api/itineraries/:id", function(req, res) {
     
     db.Itinerary.findOne({
       where: {
@@ -42,14 +42,14 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new Itinerary
-  app.post("/api/iteneraries", function(req, res) {
+  app.post("/api/itineraries", function(req, res) {
     db.Post.create(req.body).then(function(dbPost) {
       res.json(dbPost);
     });
   });
 
   // DELETE route for deleting Itinerary
-  app.delete("/api/iteneraries/:id", function(req, res) {
+  app.delete("/api/itineraries/:id", function(req, res) {
     db.Itinerary.destroy({
       where: {
         id: req.params.id
@@ -60,7 +60,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating Itinerary
-  app.put("/api/iteneraries", function(req, res) {
+  app.put("/api/itineraries", function(req, res) {
     db.Itinerary.update(
       req.body,
       {
