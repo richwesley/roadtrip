@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Create Itenerary</title>
-	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
-	<link href="../jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
-	<link href="../jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
-	<link href="../jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
-	<script src="../jQueryAssets/jquery-1.11.1.min.js"></script>
-	<script src="../jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
+	
+	<link href="assets/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet">
+	<link href="assets/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet">
+	<link href="assets/jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+	
 </head>
 
 <body>
@@ -27,31 +27,38 @@
     		</ul>
 			</div>
 		</nav>
-		<form>
-	  	  
-			<div class="dropdown">
-			<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Add Event
-			<span class="caret"></span></button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Activity</a></li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lodging</a></li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"></a>Transportation</li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Driving Route</a></li>
-			</ul>
-		  </div>
-      	<div>
-      		<lable for="Datepicker1" id="datepicker1">Date</lable>
-		  	<input type="text" id="Datepicker1">
-      	</div>		
-       
-        </form>		
+		<div class="form-group">
+	  	  	<div class="row">
+	  	  		<div class="col-sm-12">  	  
+				<lable for="Datepicker1" id="datepicker1">Add new Day</lable>
+				<input type="text" id="Datepicker1">
+				</div>
+      		</div>		
+	  	  	<div class="row">
+	  	  		<div class="col-sm-12">
+				<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Add Event
+				<span class="caret"></span></button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Activity</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lodging</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Transportation</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Driving Route</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </div>	
+        </div>		
 	</div>
-<script type="text/javascript">
+</body>
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="assets/jQueryAssets/jquery-1.11.1.min.js"></script>
+<script src="assets/jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
 $(function() {
 	$( "#Datepicker1" ).datepicker(); 
 });
-    </script>
-</body>
-<script src="assets/js/bootstrap.min.js"></script>
-<!--<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>-->
+</script>
 </html>
