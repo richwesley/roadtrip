@@ -28,10 +28,11 @@ module.exports = function(app) {
     });
   });
 
+
   // Get rotue for retrieving a single itinerary
   app.get("/api/itineraries/:id", function(req, res) {
     
-    db.Itinarary.findOne({
+    db.Itinerary.findOne({
       where: {
         id: req.params.id
       },
