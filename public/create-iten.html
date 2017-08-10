@@ -40,20 +40,31 @@
 				<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Add Event
 				<span class="caret"></span></button>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="menu">
-				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Activity</a></li>
-				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lodging</a></li>
-				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Transportation</a></li>
-				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Driving Route</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "activity">Activity</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "lodging">Lodging</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "transportation">Transportation</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "driving" >Driving Route</a></li>
 				</ul>
 			  </div>
 			</div>
 		  </div>
        			
         </div>	
-        <form name="form_name1" id="form_name1" style="display:none">
+        <form name="form_name1" id="activity" style="display:none">
 			<div class="form-group">
-				<label for="exampleInputEmail1">Email address</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				<label for="activity">Activity Name</label>
+				<input type="text" class="form-control" id="activityInput" placeholder="Enter Activity">
+			</div>
+			<div class="form-group">
+				<label for="conformation Number">Confirmation Number</label>
+				<input type="text" class="form-control" id="confInput" placeholder="Enter confirmation Number">
+			</div>
+			<div class="form-group">
+				<label for="Time">Reservation Time</label>
+				<input type="time" class="form-control" id="confInput" placeholder="Enter Reservation Time">
+			</div>
+			<div>
+				<button class="btn btn-primary" type="submit" id="activityForm">Add Activity</button>
 			</div>
 		</form>
 
@@ -78,8 +89,22 @@ $(function() {
 	$( "#Datepicker1" ).datepicker(); 
 });
 	
-$("#menu").on("change", function() {
-    $("#" + $(this).val()).show().siblings().hide();	
+$("#menu1").on("click", function() {
+	console.log('it did a thing');
+
+});
+
+$("#menu").on("click", function() {
+	console.log('it did a different thing');
+	
+	 var value =  event.srcElement;
+	 var selection = "#" + ($(value).attr("value"));	
+	
+	$(selection).css("display", "block");
+		console.log(event.srcElement);
+		console.log($(value).attr("value"));	
+		console.log(selection);
+	
 });
 </script>
 </html>
