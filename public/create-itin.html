@@ -11,6 +11,13 @@
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 	
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<script src="assets/jQueryAssets/jquery-1.11.1.min.js"></script>
+	<script src="assets/jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
+	
+	<script src="assets/js/bootstrap.min.js"></script>
+		
 </head>
 
 <body>
@@ -22,7 +29,7 @@
    				 </div>
 			<ul class="nav navbar-nav">
 				<li><a href="itinerary.html">Itinerary List</a></li>
-      			<li><a href="create-iten.html" class="active">Create Itinerary</a></li>
+      			<li><a href="create-itin.html" class="active">Create Itinerary</a></li>
       			<li><a href="user.html">User Admin</a></li>    			
     		</ul>
 			</div>
@@ -40,7 +47,7 @@
 				<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Add Event
 				<span class="caret"></span></button>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="menu">
-				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "activity">Activity</a></li>
+				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "activity-form">Activity</a></li>
 				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "lodging">Lodging</a></li>
 				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "transportation">Transportation</a></li>
 				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" value = "driving" >Driving Route</a></li>
@@ -50,7 +57,7 @@
 		  </div>
        			
         </div>	
-        <form name="form_name1" id="activity" style="display:none">
+        <form name="activity-form" id="activity-form" id="af" style="display:none">
 			<div class="form-group">
 				<label for="activity">Activity Name</label>
 				<input type="text" class="form-control" id="activityInput" placeholder="Enter Activity">
@@ -61,10 +68,10 @@
 			</div>
 			<div class="form-group">
 				<label for="Time">Reservation Time</label>
-				<input type="time" class="form-control" id="confInput" placeholder="Enter Reservation Time">
+				<input type="time" class="form-control" id="resTime" placeholder="Enter Reservation Time">
 			</div>
 			<div>
-				<button class="btn btn-primary" type="submit" id="activityForm">Add Activity</button>
+				<button class="btn btn-success btn-block" type="submit" id="activityForm">Add Activity</button>
 			</div>
 		</form>
 
@@ -79,32 +86,22 @@
 
 </body>
 
-<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="assets/jQueryAssets/jquery-1.11.1.min.js"></script>
-<script src="assets/jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-
+<script> src="assets/js/itinerary.js" </script>
 <script>
 $(function() {
 	$( "#Datepicker1" ).datepicker(); 
 });
 	
-$("#menu1").on("click", function() {
-	console.log('it did a thing');
-
-});
-
-$("#menu").on("click", function() {
-	console.log('it did a different thing');
+ $("#menu").on("click", function() {
 	
 	 var value =  event.srcElement;
-	 var selection = "#" + ($(value).attr("value"));	
+	 var selection = "#" + ($(value).attr("value"));
+	  console.log(selection);	
 	
-	$(selection).css("display", "block");
-		console.log(event.srcElement);
-		console.log($(value).attr("value"));	
-		console.log(selection);
-	
-});
+	$(selection).css("display", "block");		
+})
+
+
 </script>
+
 </html>

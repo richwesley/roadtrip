@@ -1,7 +1,7 @@
 {
   "name": "roadtrip",
   "version": "1.0.0",
-  "description": "Itenerary Planner",
+  "description": "Itinerary Planner",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

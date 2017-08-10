@@ -5,19 +5,14 @@ $(document).ready(function() {
   var usernameInput = $("#username");
   var passwordInput = $("#password");
   var emailInput  = $("#email");
-  // Adding event listeners to the form to create a new object, and the button to delete
-  // an Author
+ 
   $(document).on("submit", "#signup-form", handleUserFormSubmit);
-  // $(document).on("click", ".delete-author", handleDeleteButtonPress);
-
-  // Getting the intiial list of Authors
-  // getAuthors();
-
-  // A function to handle what happens when the form is submitted to create a new Author
+ 
   function handleUserFormSubmit(event) {
     event.preventDefault();
     // Don't do anything if the name fields hasn't been filled out
     if (!usernameInput.val().trim()) {
+       
       return;
     }
    
@@ -33,7 +28,8 @@ $(document).ready(function() {
   // A function for creating an author. Calls getAuthors upon completion
   function upsertUser(userData) {
     $.post("/api/users", userData)
-    .then(function () {
+
+    .then(function () {   
       displayItin();
     })
       }
@@ -55,6 +51,9 @@ $(document).ready(function() {
 //     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
 //     return newTr;
 //   }
+      function login ()  {
+        
+      }
 
 //   // Function for retrieving authors and getting them ready to be rendered to the page
 //   function getAuthors() {
