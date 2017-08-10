@@ -7,6 +7,10 @@
 
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body>
@@ -33,7 +37,7 @@
           <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
+          <form role="form" id="login">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
               <input type="text" class="form-control" id="usrname" placeholder="Enter Username">
@@ -69,7 +73,7 @@
           <h4><span class="glyphicon glyphicon-pencil"></span> Sign Up</h4>
         </div>
         <div class="modal-body" style="padding:30px 50px;">
-          <form role="form">
+          <form role="form" id="signup-form">
           <div class="form-group">
               <label for="fname"><span class="glyphicon glyphicon-asterisk"></span> First Name</label>
               <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
@@ -83,7 +87,7 @@
               <input type="text" class="form-control" id="username" placeholder="Enter Username">
             </div>
             <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-lock"></span> Password</label>
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
               <input type="password" class="form-control" id="password" placeholder="Enter password">
             </div>
             <!-- <div class="form-group">
@@ -95,7 +99,7 @@
               <input type="text" class="form-control" id="email" placeholder="Enter email">
             </div>
 
-              <a href="itinerary.html"><button type="button"  id="newUser" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Create Account</button></a>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Create Account</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -105,27 +109,19 @@
       </div>     
     </div>
   </div> 
- </div> 		 		
+ </div>
+  		 		
 </body>
 
 
-<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/user.js"></script> 
 <script>
 	
 		$(document).ready(function(){
 			$("#tire").click(function(){
 				$("#loginModal").modal();
 			});
-		
-//		$("#signup").click(function(){
-//				$("signupModal").modal();
-//				});
-		});	
-//		
-//		$("#").click(function(){
-//   			window.location.href="/itinerary";
-//		})
+    });  
 </script>
  
 </html>

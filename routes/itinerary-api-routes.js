@@ -44,8 +44,8 @@ module.exports = function(app) {
 
   // POST route for saving a new itinerary
   app.post("/api/itineraries", function(req, res) {
-    db.Post.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+    db.Itinerary.create(req.body).then(function(dbItinerary) {
+      res.json(dbItinerary);
     });
   });
 
