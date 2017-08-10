@@ -65,20 +65,20 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Define routes.
-app.get('/',
-  function(req, res) {
-    res.render('home', { user: req.user });
-  });
+// app.get('/',
+//   function(req, res) {
+//     res.render('home', { user: req.user });
+//   });
 
-app.get('/login',
-  function(req, res){
-    res.render('login');
-  });
+// app.get('/login',
+//   function(req, res){
+//     res.render('login');
+//   });
   
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/itinerary');
   });
   
 app.get('/logout',

@@ -28,7 +28,7 @@ var record = db.User.username;
 exports.findByUsername = function(username, cb) {
   db.User.findAll({
     where: {
-      username: username
+      username: req.user
     }
   });
 }
