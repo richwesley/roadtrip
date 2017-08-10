@@ -39,7 +39,7 @@
 				<div class="dropdown">
 				<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Add Event
 				<span class="caret"></span></button>
-				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="menu">
 				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Activity</a></li>
 				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lodging</a></li>
 				  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Transportation</a></li>
@@ -51,7 +51,10 @@
        			
         </div>	
         <form name="form_name1" id="form_name1" style="display:none">
-<!---- THIS IS FORM 1---->
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+			</div>
 		</form>
 
 		<form name="form_name2" id="form_name2" style="display:none">
@@ -75,8 +78,8 @@ $(function() {
 	$( "#Datepicker1" ).datepicker(); 
 });
 	
-$("#myselect").on("change", function() {
+$("#menu").on("change", function() {
     $("#" + $(this).val()).show().siblings().hide();	
-	</div>
+});
 </script>
 </html>
