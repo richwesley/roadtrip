@@ -1,10 +1,12 @@
-var db = require("../models");
+const express = require('express');
+const db = require("../models");
+
 
 module.exports = function(app) {
   app.get("/api/users", function(req, res) {
   
     db.User.findAll({
-      include: [db.Post]
+      include: [db.Itinerary]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
@@ -16,7 +18,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Post]
+      include: [db.Itinerary]
     }).then(function(dbuser) {
       res.json(dbUser);
     });
@@ -25,8 +27,12 @@ module.exports = function(app) {
   app.post("/api/users", function(req, res) {
     db.User.create(req.body).then(function(dbUser) {
       res.json(dbUser);
+     
     });
-  });
+      
+    });
+
+    
 
   app.delete("/api/users/:id", function(req, res) {
     db.User.destroy({
@@ -34,7 +40,8 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(dbUser) {
-      res.json(dbUser);
+     
+     
     });
   });
 

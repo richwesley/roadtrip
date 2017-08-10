@@ -3,8 +3,8 @@ $(document).ready(function() {
   var fnameInput = $("#fname");
   var lnameInput = $("#lname");
   var usernameInput = $("#username");
-  var passwordInput = $("password");
-  var emailInput  = $("emails")
+  var passwordInput = $("#password");
+  var emailInput  = $("#email");
   // Adding event listeners to the form to create a new object, and the button to delete
   // an Author
   $(document).on("submit", "#signup-form", handleUserFormSubmit);
@@ -17,24 +17,31 @@ $(document).ready(function() {
   function handleUserFormSubmit(event) {
     event.preventDefault();
     // Don't do anything if the name fields hasn't been filled out
-    if (!uernameInput.val().trim().trim()) {
+    if (!usernameInput.val().trim()) {
       return;
     }
-    // Calling the upsertAuthor function and passing in the value of the name input
+   
     upsertUser({
-      fname:    fnameInput .val() .trim(),
-      lname:    lnameInput .val() .trim(),
+      FirstName:fnameInput .val() .trim(),
+      LastName: lnameInput .val() .trim(),
       username: usernameInput .val() .trim(),
-      email:    emailInput .val() .trim(),
-      password: passwordInput .val() .trim(),
+      password: passwordInput .val(),
       email:    emailInput .val() .trim()
     });
   }
 
   // A function for creating an author. Calls getAuthors upon completion
-  function upsertAuthor(userData) {
-    $.post("/api/user", userData)
-      // .then(getAuthors);
+  function upsertUser(userData) {
+    $.post("/api/users", userData)
+    .then(function () {
+      displayItin();
+    })
+      }
+
+  function displayItin () {
+    $("#signup-form").empty();
+    document.location="itinerary.html"
+
   }
 
   // Function for creating a new list row for authors

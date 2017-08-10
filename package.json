@@ -20,7 +20,6 @@
     "body-parser": "^1.17.2",
     "connect-ensure-login": "^0.1.1",
     "express": "^4.15.3",
-    "image-map": "^1.0.6",
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.0",
