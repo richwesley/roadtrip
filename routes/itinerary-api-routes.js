@@ -5,7 +5,8 @@
 
 // Requiring our models
 var db = require("../models");
-
+var express = require('express');
+var router = express.Router();
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -40,11 +41,13 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new itinerary
-  app.post("/api/itineraries", function(req, res) {
-    db.Itinerary.create(req.body).then(function(dbItinerary) {
-      res.json(dbItinerary);
-    });
+  app.post('/api/itineraries', function(req, res) {
+  models.User.create({
+    username: req.body.itinType
+  }).then(function() {
+    res.redirect('/itinerary');
   });
+});
 
   // DELETE route for deleting itinerary
   app.delete("/api/itineraries/:id", function(req, res) {
