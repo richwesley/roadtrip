@@ -1,7 +1,4 @@
 // JavaScript Document
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
 
 // Dependencies
 // =============================================================
@@ -13,7 +10,7 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the iteneraries
+  // GET route for getting all of the itineraries
   app.get("/api/itineraries", function(req, res) {
     var query = {};
     if (req.query.user_id) {

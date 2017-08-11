@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       primaryKey: true
       },
-	  itenType: {
+	  itinType: {
 		  type: DataTypes.STRING,
 		  allowNull: false
 	  },
@@ -54,7 +54,7 @@ module.exports = function(sequelize, DataTypes) {
     
     Itinerary.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };
