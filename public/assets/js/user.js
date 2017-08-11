@@ -1,18 +1,18 @@
 $(document).ready(function() {
-  // Getting references to the name inout and author container, as well as the table body
+  
   var fnameInput = $("#fname");
   var lnameInput = $("#lname");
-  var usernameInput = $("#username");
+  var usernameInput = $("#userName");
   var passwordInput = $("#password");
   var emailInput  = $("#email");
+
  
   $(document).on("submit", "#signup-form", handleUserFormSubmit);
  
   function handleUserFormSubmit(event) {
     event.preventDefault();
-    // Don't do anything if the name fields hasn't been filled out
-    if (!usernameInput.val().trim()) {
-       
+   
+    if (!usernameInput.val().trim()) {   
       return;
     }
    
@@ -25,7 +25,6 @@ $(document).ready(function() {
     });
   }
 
-  // A function for creating an author. Calls getAuthors upon completion
   function upsertUser(userData) {
     $.post("/api/users", userData)
 
@@ -36,9 +35,10 @@ $(document).ready(function() {
 
   function displayItin () {
     $("#signup-form").empty();
-    document.location="itinerary.html"
+     document.location="itinerary.html"
 
   }
+});
 
   // Function for creating a new list row for authors
 //   function createAuthorRow(authorData) {
@@ -51,9 +51,7 @@ $(document).ready(function() {
 //     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
 //     return newTr;
 //   }
-      function login ()  {
-        
-      }
+     
 
 //   // Function for retrieving authors and getting them ready to be rendered to the page
 //   function getAuthors() {
@@ -98,5 +96,5 @@ $(document).ready(function() {
 //     })
 //     .done(getAuthors);
 //   }
- });
+
 // // JavaScript Document

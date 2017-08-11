@@ -1,25 +1,20 @@
 $(document).ready(function() {
 
- 
-
-   var activityInput = $("#activityInput");
-   var confInput = $("#confInput");
-   var resTime = $("resTime");
-    
-
-   $(document).on("submit", "#form-submit", handleActivityFormSubmit);
+   var activityInput = $("#activity").val().trim();
+  
+   $(document).on("submit", "#addActivity", handleActivityFormSubmit);
 
     function handleActivityFormSubmit(event) {
     event.preventDefault();
    
-    if (!activityInput.val().trim()) {
+    if (!activityInput) {
       return;
       }
-    };
+    }
    
     upsertItinerary({
-      itinType: activityInput .val() .trim(),
-      confNum: confInput .val() .trim()
+      itinType: activityInput,
+//      confNum: confInput .val() .trim()
       //arrivalTime: resTime .val() .trim()
     });
   
@@ -28,12 +23,12 @@ $(document).ready(function() {
     
     .then(function () {
       displayItin();
-    })
-      };
+     });
+      }
 
   function displayItin () {
-   $("#activity-form").empty();
-    // document.location="itinerary.html"
+   $("#addActivity").empty();
+    // document.location="itinerary.html";
 
   }
  
