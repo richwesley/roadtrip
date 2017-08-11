@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Itenerary</title>
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+
+
+  <div class="container">
+    <div class="jumbotron text-center">
+      
+        <h1>Roadtrip Planner <br/><small class="current-time"></small></h1>
+        
+        
+      
+    </div>
+
+
+
+    <div class="row content">
+      <div class="col-sm-12 col-md-5">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Create Itinerary</h3>
+          </div>
+          <div class="panel-body">
+        <span class="help-block">Flight Details</span>
+            <form>
+              <div class="form-group">
+                <label for="airportAddr">Airport Name</label>
+                <input type="text" class="form-control" id="airportAddr" placeholder="Name of the airport you're flying out...">
+              </div>
+              <div class="form-group">
+                <label for="airlineInfo">Airline Info</label>
+                <input type="text" class="form-control" id="airlineInfo" placeholder="The airline you are flying..">
+              </div>
+              <div class="form-group">
+                <label for="flightConf">Confirmation Code</label>
+                <input type="text" class="form-control" id="flightConf" placeholder="The confirmation code...">
+              </div>
+
+              <div class="form-group">
+                <label for="flightDate">Flight Date</label>
+                <input type="text" class="form-control" id="flightDate" placeholder="The date of your flight...">
+              </div>
+              <div class="form-group">
+                <label for="flightTime">Flight Time</label>
+                <input type="text" class="form-control" id="flightTime" placeholder="The time of your flight...">
+              </div>
+              <div class="form-group">
+                <label for="flightCost">Cost</label>
+                <input type="text" class="form-control" id="flightCost" placeholder="The cost of your flight...">
+              </div>
+              <br>
+            
+              <button type="submit" class="btn submit-flight">Submit</button>
+              <button type="reset" class="btn reset-flight">Clear</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Flight Schedule</h3>
+          </div>
+          <div class="panel-body table-responsive">
+            <table class="table">
+              <thead>
+                
+                <th class="text-center">Address</th>
+                <th class="text-center">Airline</th>
+                <th class="text-center">Confirmation</th>
+                <th class="text-center">Flight Date</th>
+                <th class="text-center">Flight Time</th>
+                 <th class="text-center">Cost</th>
+
+                <th></th>
+              </thead>
+              
+              <tbody class="text-center flight-table">
+
+              </tbody>
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<!-- Rental car portion -->
+
+      <div class="row content">
+      <div class="col-sm-12 col-md-5">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Create Itinerary</h3>
+          </div>
+          <div class="panel-body">
+        <span class="help-block">Rental Car Details</span>
+            <form>
+              <div class="form-group">
+                <label for="carAddress">Rental Company Address</label>
+                <input type="text" class="form-control" id="carAddress" placeholder="The address of the rental car company...">
+              </div>
+              <div class="form-group">
+                <label for="carModel">Rental Car Model</label>
+                <input type="text" class="form-control" id="carModel" placeholder="The model of your rental car...">
+              </div>
+              <div class="form-group">
+                <label for="carConf">Confirmation Code</label>
+                <input type="text" class="form-control" id="carConf" placeholder="The confirmation code of the rental...">
+              </div>
+              <div class="form-group">
+                <label for="rentalPeriod">Rental Period<br/></label>
+                <input type="text" class="form-control" id="rentalPeriod" placeholder="The rental period of your vehicle...">
+              </div>
+
+
+              <div class="form-group">
+                <label for="carCost">Cost</label>
+                <input type="text" class="form-control" id="carCost" placeholder="Rental cost in total...">
+              </div>
+            
+              <button type="submit" class="btn submit-car">Submit</button>
+              <button type="reset" class="btn reset-car">Clear</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Rental Car details</h3>
+          </div>
+          <div class="panel-body table-responsive">
+            <table class="table">
+              <thead>
+                
+                <th class="text-center">Address</th>
+                <th class="text-center">Car Model</th>
+                <th class="text-center">Confirmation</th>
+                <th class="text-center">Rental Period</th>
+                <th class="text-center">Cost</th>
+                <th></th>
+              </thead>
+              
+              <tbody class="text-center car-table">
+
+              </tbody>
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+        <div class="row content">
+      <div class="col-sm-12 col-md-5">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Create Itinerary</h3>
+          </div>
+          <div class="panel-body">
+        <span class="help-block">Hotel Details</span>
+            <form>
+              <div class="form-group">
+                <label for="hotelAddr">Hotel Address</label>
+                <input type="text" class="form-control" id="hotelAddr" placeholder="The address of where you'll be staying...">
+              </div>
+              <div class="form-group">
+                <label for="hotelRoom">Hotel Room</label>
+                <input type="text" class="form-control" id="hotelRoom" placeholder="The room number during your stay...">
+              </div>
+              <div class="form-group">
+                <label for="hotelConf">Confirmation Code</label>
+                <input type="text" class="form-control" id="hotelConf" placeholder="The confirmation code of the booking...">
+              </div>
+                <div class="form-group">
+                <label for="stayingPeriod">Period of Staying<br/></label>
+                <input type="text" class="form-control" id="stayingPeriod" placeholder="The length of your staying....">
+              </div>
+                <div class="form-group">
+                <label for="hotelCost">Hotel Cost<br/></label>
+                <input type="text" class="form-control" id="hotelCost" placeholder="The total cost of hotel....">
+              </div>
+            
+              <button type="submit" class="btn submit-hotel">Submit</button>
+              <button type="reset" class="btn rese-hotel">Clear</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Hotel Details</h3>
+          </div>
+          <div class="panel-body table-responsive">
+            <table class="table">
+              <thead>
+                
+                <th class="text-center">Hotel Address</th>
+                <th class="text-center">Hotel Room #</th>
+                <th class="text-center">Confirmation</th>
+                <th class="text-center">Period of Staying</th>
+                <th class="text-center">Cost</th>
+                <th></th>
+              </thead>
+              
+              <tbody class="text-center hotel-table">
+
+              </tbody>
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="assets/js/script2.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</body>
+</html>
