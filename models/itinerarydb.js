@@ -50,13 +50,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
     }
      });
-  // Itinerary.associate = function(models) {
+  Itinerary.associate = function(models) {
     
-  //   Itinerary.belongsTo(models.User, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+    Itinerary.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
     return Itinerary;
  };
