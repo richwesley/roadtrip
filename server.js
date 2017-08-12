@@ -70,10 +70,10 @@ app.use(passport.session());
 //     res.render('home', { user: req.user });
 //   });
 
-// app.get('/login',
-//   function(req, res){
-//     res.render('login');
-//   });
+app.get('/login',
+  function(req, res){
+    res.render('login');
+  });
   
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
