@@ -1,37 +1,40 @@
 $(document).ready(function() {
 
-   var activityInput = $("#activity").val().trim();
+   var activityInput = $("#activity");
+   var confInput = $("#confnum")
   
    $(document).on("submit", "#addActivity", handleActivityFormSubmit);
 
     function handleActivityFormSubmit(event) {
     event.preventDefault();
    
-    if (!activityInput) {
-      return;
-      }
+    if (!activityInput.val().trim()) {
+       return;
+    //   }
     }
    
     upsertItinerary({
-      itinType: activityInput,
-//      confNum: confInput .val() .trim()
+      itinType: activityInput .val() .trim(),
+      confNum: confInput .val() .trim()
       //arrivalTime: resTime .val() .trim()
     });
   
      function upsertItinerary(itinData) {
     $.post("/api/itineraries", itinData)
-    
+     
     .then(function () {
+       console.log(itinData);
       displayItin();
      });
       }
 
   function displayItin () {
    $("#addActivity").empty();
-    // document.location="itinerary.html";
+   document.location="itinerary.html";
 
-  }
- 
+      }
+    }
+})  
   // var url = window.location.search;
   // var userId;
   // if (url.indexOf("?user_id=") !== -1) {
@@ -158,5 +161,5 @@ $(document).ready(function() {
   //   blogContainer.append(messageh2);
   // }
 
- });
+ 
 // JavaScript Document

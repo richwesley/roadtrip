@@ -30,12 +30,12 @@ $(document).ready(function() {
 
     .then(function () {   
       displayItin();
-    })
+    });
       }
 
   function displayItin () {
     $("#signup-form").empty();
-     document.location="itinerary.html"
+     document.location="itinerary.html";
 
   }
 });
