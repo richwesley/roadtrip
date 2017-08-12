@@ -14,8 +14,8 @@ $(document).ready(function() {
     }
    
     upsertItinerary({
-      itinType: activityInput .val() .trim(),
-      confNum: confInput .val() .trim()
+      itinType: activityInput.val().trim(),
+      confNum: confInput.val().trim()
       //arrivalTime: resTime .val() .trim()
     });
   
