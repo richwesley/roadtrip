@@ -3,9 +3,12 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const path = require("path");
 const app = express();
+
+
+
+var session = require('express-session');
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
-
 // Configure the local strategy for use by Passport.
 //
 // The local strategy require a `verify` function which receives the credentials
@@ -30,16 +33,16 @@ passport.use(new Strategy(
 // typical implementation of this is as simple as supplying the user ID when
 // serializing, and querying the user record by ID from the database when
 // deserializing.
-passport.serializeUser(function(user, cb) {
-  cb(null, user.id);
+passport.serializeUser(function(user_id, cb) {
+  cb(null, user_id);
 });
 
-passport.deserializeUser(function(id, cb) {
-  db.users.findById(id, function (err, user) {
-    if (err) { return cb(err); }
-    cb(null, user);
+passport.deserializeUser(function(user_id, cb) {
+  // db.users.findById(id, function (err, user) {
+  //   if (err) { return cb(err); }
+    cb(null, user_id);
   });
-}); 
+ 
 
 const PORT = process.env.PORT || 3000;
 
@@ -61,6 +64,13 @@ require("./routes/itinerary-api-routes")(app);
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
+app.use(require('cookie-parser')());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: true }
+}))
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -70,13 +80,13 @@ app.use(passport.session());
 //     res.render('home', { user: req.user });
 //   });
 
-// app.get('/login',
-//   function(req, res){
-//     res.render('login');
-//   });
+app.get('/login',
+  function(req, res){
+    res.render('login');
+  });
   
 app.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local', { successRedirect: '/itinerary', failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/itinerary');
   });
