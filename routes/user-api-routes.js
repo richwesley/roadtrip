@@ -1,5 +1,5 @@
 
-const db = require("../models");
+var db = require("../models");
 
 
 module.exports = function(app) {
@@ -29,9 +29,8 @@ module.exports = function(app) {
       res.json(dbUser);
       console.log(res);
      
-    });
-      
-    });
+    });   
+  });
 
     
 

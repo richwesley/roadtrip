@@ -49,7 +49,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static("public"));
 
 // Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -61,6 +64,7 @@ const db = require("./models");
 require("./routes/user-api-routes")(app);
 require("./routes/html-routes")(app);
 require("./routes/itinerary-api-routes")(app);
+
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
@@ -105,10 +109,8 @@ app.get('/profile',
 
 // Syncing sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
       });
 });
-
-
