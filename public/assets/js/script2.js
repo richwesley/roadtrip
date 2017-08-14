@@ -524,5 +524,3 @@ $("body").on("click", ".delete", function(){
 
 
 });
-
-  

@@ -9,47 +9,47 @@ module.exports = function(sequelize, DataTypes) {
 	  itinType: {
 		  type: DataTypes.STRING,
 		  allowNull: false
-	  },
-    date: {
-      type: DataTypes.DATE,
-    },
-    confNum: {
-      type: DataTypes.STRING,
-    },
-    number: {
-      type: DataTypes.STRING,
-    },
-    miles: {
-      type: DataTypes.INTEGER,
-    },
-    vehicleType: {
-      type: DataTypes.STRING,
-    },
-    departTime: {
-      type: DataTypes.TIME,
-    },
-    arrivalTime: {
-      type: DataTypes.TIME,
-    },
-    company: {
-      type: DataTypes.STRING,
-    },
-    addressStreet: {
-      type: DataTypes.STRING,
-    },
-    addressCity: {
-      type: DataTypes.STRING,
-    },
-    addressZip: {
-      type: DataTypes.STRING,
-    },
-    addressState: {
-      type: DataTypes.STRING,
-    },
-    cost: {
-      type: DataTypes.INTEGER,
-    }
-     });
+	  }
+    // date: {
+    //   type: DataTypes.DATE,
+    // },
+    // confNum: {
+    //   type: DataTypes.STRING,
+    // },
+    // number: {
+    //   type: DataTypes.STRING,
+    // },
+    // miles: {
+    //   type: DataTypes.INTEGER,
+    // },
+    // vehicleType: {
+    //   type: DataTypes.STRING,
+    // },
+    // departTime: {
+    //   type: DataTypes.TIME,
+    // },
+    // arrivalTime: {
+    //   type: DataTypes.TIME,
+    // },
+    // company: {
+    //   type: DataTypes.STRING,
+    // },
+    // addressStreet: {
+    //   type: DataTypes.STRING,
+    // },
+    // addressCity: {
+    //   type: DataTypes.STRING,
+    // },
+    // addressZip: {
+    //   type: DataTypes.STRING,
+    // },
+    // addressState: {
+    //   type: DataTypes.STRING,
+    // },
+    // cost: {
+    //   type: DataTypes.INTEGER,
+    // }
+      });
   Itinerary.associate = function(models) {
     
     Itinerary.belongsTo(models.User, {
